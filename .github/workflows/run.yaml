@@ -7,7 +7,7 @@ on:
 
 jobs:
   build:
-    runs-on: ubunutu-latest
+    runs-on: ubunutu-18.04
     steps:
       - uses: actions/checkout@v2
       - name: compose-run
