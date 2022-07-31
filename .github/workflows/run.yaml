@@ -9,9 +9,12 @@ jobs:
   build:
     runs-on: ubunutu-latest
     steps:
-      - uses: actions/checkout@v2
-      - name: compose-run
-        shell: bash
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Build and up
         run: |
           docker-compose up -d
           curl http://localhost:5000/
+        working-directory: ./
+
