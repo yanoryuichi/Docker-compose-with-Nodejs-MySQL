@@ -16,6 +16,7 @@ jobs:
       - name: Build and up
         run: |
           docker-compose up --build -d
+          docker ps
           curl http://localhost:5000/
         working-directory: ./
 
