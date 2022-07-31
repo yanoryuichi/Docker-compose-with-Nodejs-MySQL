@@ -1,0 +1,17 @@
+name: docker-compose-build
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubunutu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: compose-run
+        shell: bash
+        run: |
+          docker-compose up -d
+          curl http://localhost:5000/
